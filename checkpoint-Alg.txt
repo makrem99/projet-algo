@@ -1,0 +1,44 @@
+Algorithme lit_Phrase ;
+Var Texte :chaine ;
+ T,NbCaractere,NbMots,NbPhrase,I :entier ;
+ 
+Debut
+Ecrire(‘Donner un texte’) ;
+Lire(Texte) ;
+
+T := Taille(Texte) ;
+
+NbCaractere := 0 ; NbMots := 0 ; NbPhrase := 0 ; I := 1 ;
+Tantque (I < =  N) Faire 
+
+ Si (Texte[I]= ’ ‘) Alors
+  I := I + 1;
+ Sinon
+Tantque (I < =  N) et (Texte[I] <> ’ ‘)et(Texte[I] <> ’.‘)Faire
+  NbCaractere ← NbCaractere + 1 ; 
+  I := I + 1 ;
+fin Tantque
+  NbMots := NbMots + 1 ;
+Si (Texte[I]=’.‘) Alors
+ NbPhrase := NbPhrase + 1;
+  Fin si 
+Fin si 
+Fin Tantque 
+
+//Fonction qui retourne le nbre Voyelle de texte
+fonction nbrVoyelles(texte: chaine de carartere):entier
+variables
+j, nbre :entier;
+Debut
+nbre := 0;
+pour j :=0 à Taille(Texte) - 1 Faire
+si ((Texte[j] ='a') OU (Texte[j] ='e') OU (Texte[j] ='i') OU (Texte[j] ='o')OU (Texte[j] ='u')OU (Texte[j] ='y') ) Alors
+nbre := nbre +1
+Fin si
+Fin pour
+retourne nbre;
+
+
+Ecrire(‘Nombre de caractère :’,NbCaractere, ’ Nombre de mots :’ , NbMots, ’ Nombre de phrases :’, NbPhrase,'le texte contient: ',nbrVoyelles(texte)) ;
+Fin Algorithme
+# makrem99
